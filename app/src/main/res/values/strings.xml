@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Tablayout</string>
+    <string name="edit_hint">
+        京东618狂欢会场
+    </string>
+    <string name="saoyisao">扫一扫</string>
+    <string name="tabtitle1">
+        首页
+    </string>
+    <string name="tabtitle2">搜索</string>
+    <string name="tabtitle3">购物车</string>
+    <string name="tabtitle4">我的</string>
+</resources>
