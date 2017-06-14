@@ -32,7 +32,7 @@ public class PageFragment extends Fragment implements ViewPager.OnPageChangeList
     public static final String ARGS_PAGE = "args_page";
 
     private int mPage;
-
+    private  List<Fragment> mFragments;
 
     private List<ImageView> mItems;
     private Context mContext = getContext();
@@ -40,7 +40,7 @@ public class PageFragment extends Fragment implements ViewPager.OnPageChangeList
 
     private FragmentManager fm;
     public LubutuAdapter mAdapter;
-
+    public  RecyclerView mRecyclerView;
     private int currentViewPagerItem;
 
 
@@ -82,18 +82,24 @@ public class PageFragment extends Fragment implements ViewPager.OnPageChangeList
 
 
         if (mPage == 1) {
-
             View view = inflater.inflate(R.layout.fragment_pa1ge, container, false);
-            RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycleview);
-            recyclerView.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false));
-            mViewPager = (ViewPager) view.findViewById(R.id.vp_lbt);
-            mItems = new ArrayList<>();
-            addImageView();
-            mAdapter = new LubutuAdapter(mItems, mContext);
-            mViewPager.setAdapter(mAdapter);
 
-            mViewPager.setOnTouchListener(this);
-            mViewPager.postDelayed(runnable, 1000);
+
+            mRecyclerView = (RecyclerView) view.findViewById(R.id.recycleview);
+            mRecyclerView.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false));
+            mFragments = new ArrayList<>();
+            addFragment();
+            RecycleAdapter mRecycleAdapter = new RecycleAdapter(view.getContext(),mFragments,getChildFragmentManager());
+            mRecyclerView.setAdapter(mRecycleAdapter);
+
+//            mViewPager = (ViewPager) view.findViewById(R.id.vp_lbt);
+//            mItems = new ArrayList<>();
+//            addImageView();
+//            mAdapter = new LubutuAdapter(mItems, mContext);
+//            mViewPager.setAdapter(mAdapter);
+//
+//            mViewPager.setOnTouchListener(this);
+//            mViewPager.postDelayed(runnable, 1000);
 
             return view;
 
@@ -143,6 +149,10 @@ public class PageFragment extends Fragment implements ViewPager.OnPageChangeList
         mItems.add(view1);
         mItems.add(view2);
 //        mAdapter.notifyDataSetChanged();
+    }
+    private void addFragment(){
+        LunbotuFragment lunbotuFragment =new LunbotuFragment();
+        mFragments.add(lunbotuFragment);
     }
 
     @Override

@@ -55,4 +55,5 @@ public  LubutuAdapter(List list,Context context){
     public int getCount() {
         return 3;
     }
+
 }

@@ -28,7 +28,8 @@
         android:layout_height="55dp"
         android:orientation="horizontal">
 
-        <TextView
+        <CheckedTextView
+
             android:id="@+id/home"
             android:layout_width="0dp"
             android:layout_height="match_parent"
