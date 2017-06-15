@@ -10,14 +10,15 @@ import android.os.Bundle;
 import android.text.Layout;
 import android.util.Log;
 import android.view.View;
+import android.widget.CheckedTextView;
 import android.widget.TextView;
 import android.support.v4.app.Fragment;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-    TextView mTextViewHome;
-    TextView mTextViewSearch;
-    TextView mTextViewShop;
-    TextView mTextViewMy;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    CheckedTextView mTextViewHome;
+    CheckedTextView mTextViewSearch;
+    CheckedTextView mTextViewShop;
+    CheckedTextView mTextViewMy;
     private Fragment mCurrentFragment;
     ;
     private Fragment mFragmenthome;
@@ -34,10 +35,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         getSupportActionBar().hide();
 
 
-        mTextViewHome = (TextView) findViewById(R.id.home);
-        mTextViewSearch = (TextView) findViewById(R.id.find);
-        mTextViewShop = (TextView) findViewById(R.id.shop);
-        mTextViewMy = (TextView) findViewById(R.id.my);
+        mTextViewHome = (CheckedTextView) findViewById(R.id.home);
+        mTextViewSearch = (CheckedTextView) findViewById(R.id.find);
+        mTextViewShop = (CheckedTextView) findViewById(R.id.shop);
+        mTextViewMy = (CheckedTextView) findViewById(R.id.my);
 
         changeTab(0);
 
@@ -49,8 +50,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mTextViewShop.setOnClickListener(this);
 
         mTextViewMy.setOnClickListener(this);
-
-
 
 
 //        mTextViewhome.setOnClickListener(new View.OnClickListener() {
@@ -67,16 +66,44 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.home:
-                changeTab(0);break;
+                changeTab(0);
+                setFalse();
+                mTextViewHome.setChecked(true);
+                mTextViewHome.setTextColor(getResources().getColor(R.color.colorPrimary));
+                break;
             case R.id.find:
-                changeTab(1);break;
+                changeTab(1);
+                setFalse();
+                mTextViewSearch.setChecked(true);
+                mTextViewSearch.setTextColor(getResources().getColor(R.color.colorPrimary));
+                break;
             case R.id.shop:
-                changeTab(2);break;
-            case  R.id.my:
-                changeTab(3);break;
+                changeTab(2);
+                setFalse();
+                mTextViewShop.setChecked(true);
+                mTextViewShop.setTextColor(getResources().getColor(R.color.colorPrimary));
+                break;
+            case R.id.my:
+                changeTab(3);
+                setFalse();
+                mTextViewMy.setChecked(true);
+                mTextViewMy.setTextColor(getResources().getColor(R.color.colorPrimary));
+                break;
         }
+    }
+
+    public void setFalse() {
+        mTextViewHome.setChecked(false);
+        mTextViewHome.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+        mTextViewSearch.setChecked(false);
+        mTextViewShop.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+        mTextViewMy.setChecked(false);
+        mTextViewSearch.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+        mTextViewShop.setChecked(false);
+        mTextViewMy.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+
     }
 
 

@@ -89,5 +89,6 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.Fragment
                mFrag = fragment;
             }
         }
+
     }
 

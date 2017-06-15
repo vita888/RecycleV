@@ -18,7 +18,7 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="0.5dp"
         android:background="@color/colorPrimaryDark">
 
     </View>
@@ -29,52 +29,59 @@
         android:orientation="horizontal">
 
         <CheckedTextView
-
             android:id="@+id/home"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:checked="true"
             android:drawablePadding="3dp"
-            android:drawableTop="@mipmap/jd_home_selected"
+            android:drawableTop="@drawable/home"
             android:gravity="center"
             android:padding="5dp"
             android:text="@string/tabtitle1"
+            android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark" />
 
-        <TextView
+        <CheckedTextView
             android:id="@+id/find"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:checked="false"
             android:drawablePadding="3dp"
-            android:drawableTop="@mipmap/find_un"
+            android:drawableTop="@drawable/search"
             android:gravity="center"
             android:padding="5dp"
             android:text="@string/tabtitle2"
+            android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark" />
 
-        <TextView
+        <CheckedTextView
             android:id="@+id/shop"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:checked="false"
             android:drawablePadding="3dp"
-            android:drawableTop="@mipmap/shop_un"
+            android:drawableTop="@drawable/shop"
             android:gravity="center"
             android:padding="5dp"
             android:text="@string/tabtitle3"
+            android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark" />
 
-        <TextView
+        <CheckedTextView
             android:id="@+id/my"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:checked="false"
             android:drawablePadding="3dp"
-            android:drawableTop="@mipmap/my_un"
+            android:drawableTop="@drawable/my"
             android:gravity="center"
             android:padding="5dp"
             android:text="@string/tabtitle4"
+            android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark" />
 
     </LinearLayout>

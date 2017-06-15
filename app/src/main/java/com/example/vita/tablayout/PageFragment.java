@@ -133,26 +133,13 @@ public class PageFragment extends Fragment implements ViewPager.OnPageChangeList
 
     }
 
-    private void addImageView() {
-        ImageView view0 = new ImageView(this.getContext());
-        view0.setImageResource(R.mipmap.lbt1);
-        ImageView view1 = new ImageView(this.getContext());
-        view1.setImageResource(R.mipmap.lbt2);
-        ImageView view2 = new ImageView(this.getContext());
-        view2.setImageResource(R.mipmap.lbt3);
-
-        view0.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        view1.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        view2.setScaleType(ImageView.ScaleType.CENTER_CROP);
-
-        mItems.add(view0);
-        mItems.add(view1);
-        mItems.add(view2);
-//        mAdapter.notifyDataSetChanged();
-    }
     private void addFragment(){
         LunbotuFragment lunbotuFragment =new LunbotuFragment();
         mFragments.add(lunbotuFragment);
+        GridRecycleViewFragment gridRecycleViewFragment = new GridRecycleViewFragment();
+        mFragments.add(gridRecycleViewFragment);
+        ImgFragment imgFragment = new ImgFragment();
+        mFragments.add(imgFragment);
     }
 
     @Override
